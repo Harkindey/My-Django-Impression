@@ -20,8 +20,7 @@ from django.contrib import admin
 # from contact import views as contact_view --->  url(r'^admin/', contact_view.contact_list),
 # from post import views as post_view ----> url(r'^admin/', post_view.contact_list),
 
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^posts/', include("posts.urls")),
+    url(r'^posts/', include("posts.urls", namespace='posts')),
 ]
