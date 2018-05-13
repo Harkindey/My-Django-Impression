@@ -16,8 +16,6 @@ def post_create(request):
         #message sucess
         messages.success(request, "Successfully Created")
         return HttpResponseRedirect(instance.get_absolute_url())
-    else:
-        messages.error(request, "Not Succesfully Created")
 
     # if request.method == "POST":
     #     print request.POST.get("content")
@@ -47,7 +45,7 @@ def post_list(request):
     #     context = {
     #         "title": "List"
     #     }
-    return render(request, "index.html", context)
+    return render(request, "post_list.html", context)
     # return HttpResponse("<h1>List<h1>")
 
 

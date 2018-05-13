@@ -1,13 +1,21 @@
-<html>
-<head>
-</head>
-<body>
+{% extends "base.html" %}
+{% block head_title %} 
+    {{insantace.title }} | {{block.super}} 
+{% endblock head_title %}
+<style>
+    {% block style %} 
+    h1{
+        color: #777777;
+    }
+    {% endblock style %}
+</style>
+<style>
+    {% block style %} {% endblock style %}
+</style>
+{% block content %}
     <h1>Form</h1>
     <form method='POST' action=''> {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value='Create Post' /> 
     </form>
-    
-
-</body>
-</html>
+{% endblock content %}
